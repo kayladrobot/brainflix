@@ -5,7 +5,8 @@ import uploadIcon from "../../assets/icons/upload.svg"
 
 function Header() {
     return (
-        <header>
+        <header className="header">
+            <h1>Hello</h1>
             <img 
                 className="header__logo"
                 src={logo}

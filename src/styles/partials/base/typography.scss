@@ -1,0 +1,107 @@
+@import '../base/colors.scss';
+// @use '../abstracts/mixins' as *;
+*{
+    font-family: Avenir;
+    box-sizing: border-box;
+}
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 600;
+$extra-bold: 700;
+
+
+@font-face {
+    font-family: 'Avenir';
+    src: url("../../../assets/font/AvenirNextLTPro-Regular.otf") format("otf");
+    // src: url("../../assets/font/AvenirNextLTPro-Demi.otf") format("otf");
+    src: url("../../../assets/font/AvenirNextLTPro-Bold.otf") format("otf");
+}
+
+@mixin small-typography {
+    @media (min-width: $mobile-width){
+        @content;
+        
+        h1, h2, h3, h4, h5, h6, p{
+            margin: 0;
+            color: red;
+        }
+        
+        h1, h2 {
+            font-size: 1.5rem;
+            line-height: 2rem; 
+            font-weight: $extra-bold;
+            margin: 0;
+        }
+        
+        h3 {
+            font-size: .875rem;
+            line-height: 1.375rem; 
+            font-weight: $bold;
+            margin: 0;
+        }
+        
+        p {
+            font-size: .8125rem;
+            line-height: 1.125rem;
+            font-weight: $normal;
+        }
+
+        .about__title {
+            font-weight: $semibold;
+        }
+
+        .contact__address, .contact__email {
+            font-size: .875rem;
+            line-height: 1.25rem;
+            font-weight: 400;
+        }
+    }   
+}
+
+@mixin large-typography {
+    @media (min-width: $tablet-width) {
+        @content;
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            color:red;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            font-weight: $extra-bold;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            line-height: 2.75rem; 
+            font-weight:  $extra-bold;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            line-height: 2rem; 
+            font-weight: $bold;
+        }
+
+        p {
+            font-size: .875rem;
+            line-height: 1.375rem;
+            font-weight: $normal;
+        }
+        .about__quoteName {
+            font-size: 17px;
+        }
+
+        .about__title {
+            font-weight: $bold;
+        }
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $white;
+}
