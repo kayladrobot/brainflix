@@ -1,5 +1,5 @@
-@import '../base/colors.scss';
-// @use '../abstracts/mixins' as *;
+@use '../base/colors.scss' as *;
+
 *{
     font-family: Avenir;
     box-sizing: border-box;
@@ -24,38 +24,42 @@ $extra-bold: 700;
         
         h1, h2, h3, h4, h5, h6, p{
             margin: 0;
-            color: red;
         }
         
-        h1, h2 {
-            font-size: 1.5rem;
-            line-height: 2rem; 
+        h1{
+            font-size: 24px;
+            line-height: 32px; 
+            font-weight: $extra-bold;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 12px;
+            line-height: 20px; 
             font-weight: $extra-bold;
             margin: 0;
         }
         
         h3 {
-            font-size: .875rem;
-            line-height: 1.375rem; 
-            font-weight: $bold;
+            font-size: 13px;
+            line-height: 18px; 
+            font-weight: $extra-bold;
             margin: 0;
         }
         
         p {
-            font-size: .8125rem;
-            line-height: 1.125rem;
+            font-size: 13px;
+            line-height: 18px;
             font-weight: $normal;
+            color: $black;
         }
 
-        .about__title {
-            font-weight: $semibold;
-        }
-
-        .contact__address, .contact__email {
-            font-size: .875rem;
-            line-height: 1.25rem;
-            font-weight: 400;
-        }
+        .btn {
+            font-size: 10px;
+            line-height: 20px;
+            font-weight: $extra-bold;
+            background-color: $blue;
+          }
     }   
 }
 
@@ -65,43 +69,37 @@ $extra-bold: 700;
         
         h1, h2, h3, h4, h5, h6 {
             margin: 0;
-            color:red;
         }
 
         h1 {
-            font-size: 3.75rem;
-            line-height: 4.25rem;
+            font-size: 33px;
+            line-height: 44px;
             font-weight: $extra-bold;
         }
 
         h2 {
-            font-size: 2.25rem;
-            line-height: 2.75rem; 
+            font-size: 12px;
+            line-height: 20px; 
             font-weight:  $extra-bold;
         }
 
         h3 {
-            font-size: 1.5rem;
-            line-height: 2rem; 
-            font-weight: $bold;
+            font-size: 14px;
+            line-height: 22px; 
+            font-weight: $extra-bold;
         }
 
         p {
-            font-size: .875rem;
-            line-height: 1.375rem;
+            font-size: 14px;
+            line-height: 22px;
             font-weight: $normal;
         }
-        .about__quoteName {
-            font-size: 17px;
-        }
 
-        .about__title {
-            font-weight: $bold;
-        }
+        .btn {
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: $extra-bold;
+            background-color: $blue;
+          }
     }
-}
-
-.link {
-    text-decoration: none;
-    color: $white;
 }

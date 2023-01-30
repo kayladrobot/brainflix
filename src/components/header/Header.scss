@@ -1,6 +1,77 @@
-@import '../../styles/partials/base/colors.scss';
+@use '../../styles/partials/base/typography.scss' as *;
+@use '../../styles/partials/base/colors.scss' as *;
+@use '../buttons/buttons.scss' as *;
+@use '../../styles/partials/abstracts/variables.scss' as *;
+@use '../../styles/partials/abstracts/mixins.scss' as *;
 
-.header{
+.header {
     width: 100%;
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    row-gap: 1rem;
+    align-items: center;
+
+    @include desktop {
+        flex-direction: row;
+    }
+
+    &__searchWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__input {
+        flex-grow: 1;
+        width: 100%;
+        border-radius: 4px;
+        height: 36px;
+        position: relative;
+    }
+
+    &__searchIcon {
+        width: 25px; 
+        height: 25px;
+        position: absolute;
+        top: 0;
+        padding: .5rem 0 0 .5rem;
+        left: 0;
+    }
+
+    ::placeholder { 
+        color:$darkBlack; 
+        padding: 0 0 0 2rem;
+        opacity: 1; 
+      }
+
+    &__profileImg {
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        object-fit: cover;
+        display: inline-block;
+
+        @include tablet {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__logo {
+        max-height: 40px;
+        max-width: 120px;
+    }
+    
+}
+
+form {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }

@@ -1,2 +1,4 @@
-@import './styles/partials/base/typography.scss';
-@import './styles/partials/base/colors.scss';
+@use './styles/partials/base/typography.scss' as *;
+@use './styles/partials/base/colors.scss' as *;
+@use './components/buttons/buttons.scss' as *;
+@use './styles/partials/forms.scss' as *;
