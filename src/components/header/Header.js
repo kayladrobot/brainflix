@@ -8,12 +8,12 @@ import searchIcon from "../../assets/icons/search.svg"
 function Header() {
     return (
         <header className="header">
+            <div className="header__grid">
             <img 
                 className="header__logo"
                 src={logo}
                 alt="brainflix logo" 
             />
-            <div className="header__searchWrapper">
                 <form>
                     <input type="text" className="header__input" placeholder="Search" />
                     <img 
@@ -22,20 +22,20 @@ function Header() {
                         alt="search icon"
                     />
                 </form>
-                <img 
-                    className="header__profileImg"
-                    src={profileImg}
-                    alt="user profile"
+                        <img 
+                            className="header__profileImg"
+                            src={profileImg}
+                            alt="user profile"
+                        />
+                <button className="btn btn__header">
+                    <img 
+                        className="btn__uploadIcon"
+                        src={uploadIcon}
+                        alt="upload icon"
                     />
-            </div>
-            <button className="btn btn__header">
-                <img 
-                    className="btn__uploadIcon"
-                    src={uploadIcon}
-                    alt="upload icon"
-                />
                 Upload
             </button>
+            </div>
         </header>
     )
 }
