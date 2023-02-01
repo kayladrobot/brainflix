@@ -1,15 +1,15 @@
-@use '../../styles/partials/base/typography.scss' as *;
-@use '../../styles/partials/base/colors.scss' as *;
-@use '../buttons/buttons.scss' as *;
-@use '../../styles/partials/abstracts/variables.scss' as *;
-@use '../../styles/partials/abstracts/mixins.scss' as *;
+@use "../../styles/partials/base/typography.scss" as *;
+@use "../../styles/partials/base/colors.scss" as *;
+@use "../buttons/buttons.scss" as *;
+@use "../../styles/partials/abstracts/variables.scss" as *;
+@use "../../styles/partials/abstracts/mixins.scss" as *;
 
 .header {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
 
-    &__grid {
+  &__grid {
     display: grid;
     column-gap: 1rem;
     row-gap: 1rem;
@@ -17,80 +17,78 @@
     grid-template-columns: auto 36px;
 
     @include tablet {
-        column-gap: 1.5rem;
-        padding: 2rem;
-        grid-template-columns: repeat(12, 1fr);
+      column-gap: 1.5rem;
+      padding: 2rem;
+      grid-template-columns: repeat(12, 1fr);
     }
 
     @include desktop {
-        padding: auto;
-    }
+      padding: auto;
     }
 
     &__logo {
-        max-height: 40px;
-        max-width: 120px;
-        grid-column: 1 / span 2;
-        margin: auto;
+      max-height: 40px;
+      max-width: 120px;
+      grid-column: 1 / span 2;
+      margin: auto;
 
-        @include tablet {
-            grid-column: 1 / 3;
-        }
-
-    }
-    
-
-    &__input {
-        width: 100%;
-        border-radius: 4px;
-        height: 36px;
-        position: relative;
-
-        @include tablet {
-            height: 40px;
-        }
-    }
-
-    &__searchIcon {
-        width: 25px;  
-        height: 25px;
-        position: absolute;
-        top: 0;
-        padding: .5rem 0 0 .5rem;
-        left: 0;
-    }
-
-    ::placeholder { 
-        color:$darkBlack; 
-        padding: 0 0 0 2rem;
-        opacity: 1; 
+      @include tablet {
+        grid-column: 1 / 3;
       }
-
-    &__profileImg {
-        width: 36px;
-        height: 36px;
-        border-radius: 100%;
-        object-fit: cover;
-        display: inline-block;
-
-        @include tablet {
-            width: 40px;
-            height: 40px;
-            order: 4;
-            grid-column: 12 / 12
-        }
     }
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 4px;
+    height: 36px;
+    position: relative;
+
+    @include tablet {
+      height: 40px;
+    }
+  }
+
+  &__searchIcon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    padding: 0.5rem 0 0 0.5rem;
+    left: 0;
+  }
+
+  ::placeholder {
+    color: $darkBlack;
+    padding: 0 0 0 2rem;
+    opacity: 1;
+  }
+
+  &__profileImg {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    object-fit: cover;
+    display: inline-block;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+      order: 4;
+      grid-column: 12 / 12;
+    }
+  }
 }
 
 form {
-    position: relative;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
 
-    @include tablet {
-        grid-column: 5 / 9
-    }
-    @include desktop {
-        grid-column: 7 / 10
-    }
+  @include tablet {
+    grid-column: 5 / 9;
+  }
+  @include desktop {
+    grid-column: 7 / 10;
+  }
 }

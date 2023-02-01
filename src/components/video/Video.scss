@@ -1,0 +1,21 @@
+@use '../../styles/partials/base/colors.scss' as *;
+
+.video {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 1rem;
+    width: 100%;
+
+    &__image {
+        background-color: $mercury;
+        width: 40%;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    &__header {
+        margin: 0;
+        text-overflow: ellipsis;
+    }
+}

@@ -3,6 +3,7 @@
 *{
     font-family: Avenir;
     box-sizing: border-box;
+    margin: 0;
 }
 $light: 300;
 $normal: 400;
@@ -52,6 +53,7 @@ $extra-bold: 700;
             line-height: 18px;
             font-weight: $normal;
             color: $black;
+            margin: 0;
         }
 
         .btn {
