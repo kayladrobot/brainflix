@@ -1,12 +1,13 @@
 import './App.scss';
 import Header from "./components/header/Header";
-import VideoList from "./components/videoList/VideoList";
+import VideoSection from './components/videoSection/VideoSection'
+
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <VideoList />
+      <VideoSection />
     </div>
   );
 }

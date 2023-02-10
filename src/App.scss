@@ -2,3 +2,8 @@
 @use './styles/partials/base/colors.scss' as *;
 @use './components/buttons/buttons.scss' as *;
 @use './styles/partials/forms.scss' as *;
+
+body {
+    @include small-typography;
+    @include large-typography;
+}

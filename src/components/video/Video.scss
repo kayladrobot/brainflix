@@ -7,11 +7,17 @@
     column-gap: 1rem;
     width: 100%;
 
+    &__imageContainer {
+        width: 125px;
+        height: 75px;
+        object-fit: contain;
+    }
+
     &__image {
-        background-color: $mercury;
-        width: 40%;
-        height: 100px;
+        width: 125px;
+        height: 75px;
         border-radius: 10px;
+        // object-fit: cover;
     }
 
     &__header {

@@ -1,0 +1,109 @@
+@import '../../styles/partials/abstracts/mixins';
+@import '../../styles/partials/base/colors';
+
+.main {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.video{
+    &__main {
+        width: 100%;
+        background-color: $mercury;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 1rem;
+        padding: 1rem;
+
+        @include tablet {
+            width: 50%;
+        }
+    }
+
+    &__infoContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        margin-bottom: 24px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        padding-top: 1rem;
+        border-top: 1px solid $mercury;
+        justify-content: space-between;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__author {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        row-gap: 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            column-gap: 1rem;
+        }
+
+        @include desktop {
+            column-gap: 2rem;
+        }
+    }
+
+    &__engagement {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            column-gap: 1rem;
+        }
+
+        @include desktop {
+            column-gap: 2rem;
+        }
+    }
+
+    &__view {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+        color: $silver;
+    }
+
+    &__likes {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+        color: $silver;
+    }
+
+    &__description {
+        border-top: 1px solid $mercury;
+        padding-top: 1rem;
+    }
+
+    &__title {
+        padding-top: 1.5rem;
+    }
+
+    &__comments {
+        padding: 1rem;
+    }
+
+    &__date {
+        color: $silver;
+    }
+}

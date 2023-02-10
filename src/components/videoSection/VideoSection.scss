@@ -1,0 +1,14 @@
+@use '../../styles/partials/abstracts/mixins.scss' as *;
+.video {
+
+    &__section {
+        @include desktop {
+        display: flex;
+        flex-direction: row;
+        }
+        
+        @include tablet {
+            padding: 0 2.25rem;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use '../../styles/partials/base/colors.scss' as *;
+@use '../../styles/partials/abstracts/mixins.scss' as *;
+@use '../../styles/partials/base/typography.scss' as *;
+// @import '../../styles/partials/base/typography.scss';
+
+.comment {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    width: 100%;
+    grid-template-columns: 35px auto;
+    border-top: 2px solid $mercury;
+    padding: 1rem 0;
+
+    &:last-child {
+        border-bottom: 2px solid $mercury;
+    }
+
+    &__imgContainer{
+        width: 35px;
+        height: 35px;
+        background-color: $mercury;
+        border-radius: 50%;
+        object-fit: contain;
+
+        @include tablet {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+   &__copy {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+   }
+
+    &__nameDate {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__date {
+        color: $silver;
+    }
+}
