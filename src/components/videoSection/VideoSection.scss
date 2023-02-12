@@ -2,9 +2,13 @@
 .video {
 
     &__section {
+        
         @include desktop {
-        display: flex;
-        flex-direction: row;
+            display: grid;
+            column-gap: 1rem;
+            row-gap: 1rem;
+            width: 100%;
+            grid-template-columns: auto 35%;
         }
         
         @include tablet {

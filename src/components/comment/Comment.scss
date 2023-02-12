@@ -32,7 +32,11 @@
    &__copy {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: .5rem;
+
+    @include desktop {
+        margin-right: 2rem;
+    }
    }
 
     &__nameDate {

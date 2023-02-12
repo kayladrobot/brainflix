@@ -1,14 +1,17 @@
 import "./Video.scss"
 
-function Video({title, channel, src, alt}) {
+function Video({title, channel, src, alt, id, key, changeVideo, changeActiveVideo}) {
 
 
     const clickHandler = () => {
-        // changeVideo(id);
+        changeActiveVideo(id);
+
+        console.log(id)
       };
 
+      
   return (
-    <div className="video" onClick={clickHandler}>
+    <div className="video"  onClick={clickHandler}>
         <div className="video__imageContainer">
             <img 
                 className="video__image" 
@@ -17,7 +20,7 @@ function Video({title, channel, src, alt}) {
             </img>
         </div>
         <div className="video__container">
-            <h3 className="video__header">{title}</h3>
+            <h2 className="video__header">{title}</h2>
             <p>{channel}</p>
         </div>
     </div>
@@ -25,26 +28,3 @@ function Video({title, channel, src, alt}) {
 }
 
 export default Video
-
-// const Video = ({currentVideo}) => {
-
-//     // const clickHandler = () => {
-//     //     changeVideo(id);
-//     //   };
-
-//     return (
-//     <div className="video" onClick={clickHandler}>
-//         <img 
-//             className="video__image" 
-//             src="" 
-//             alt="">
-//         </img>
-//         <div className="video__container">
-//             <h4 className="video__header">{}</h4>
-//             <p>{by}</p>
-//         </div>
-//     </div>
-//     )
-// }
-
-// export default Video;

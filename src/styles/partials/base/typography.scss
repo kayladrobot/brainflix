@@ -37,16 +37,17 @@ $extra-bold: 700;
         }
 
         h2 {
-            font-size: 12px;
-            line-height: 20px; 
+            font-size: 13px;
+            line-height: 18px; 
             font-weight: $extra-bold;
             margin: 0;
         }
         
         h3 {
-            font-size: 13px;
-            line-height: 18px; 
+            font-size: 12px;
+            line-height: 20px; 
             font-weight: $extra-bold;
+            text-transform: uppercase;
             margin: 0;
         }
         
@@ -82,21 +83,22 @@ $extra-bold: 700;
         }
 
         h2 {
-            font-size: 12px;
-            line-height: 20px; 
+            font-size: 14px;
+            line-height: 22px; 
             font-weight:  $extra-bold;
         }
 
         h3 {
-            font-size: 14px;
-            line-height: 22px; 
+            font-size: 12px;
+            line-height: 20px; 
             font-weight: $extra-bold;
+            text-transform: uppercase;
         }
 
         p {
             font-size: 14px;
             line-height: 22px;
-            font-weight: $normal;
+            font-weight: $bold;
         }
 
        h4 {

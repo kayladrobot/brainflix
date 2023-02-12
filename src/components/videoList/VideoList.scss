@@ -1,5 +1,9 @@
 @use '../../styles/partials/base/colors.scss' as *;
 
 .video__list {
-    border-left: 1px solid $mercury;
+    width: 100%;
+}
+
+.video__mainHeader {
+    color: $silver;
 }

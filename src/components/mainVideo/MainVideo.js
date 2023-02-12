@@ -6,10 +6,11 @@ function MainVideo({currentVideo}) {
 
     return (
         <div>
-        <video 
-          src={currentVideo.image} 
-          controls
-          className="video__main"/>
+          <img 
+            alt="The current video"
+            src={currentVideo.image} 
+            className="video__main"
+            />
       </div>
     )
   }

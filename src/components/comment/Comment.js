@@ -9,8 +9,8 @@ function comment({timestamp, name, key, comment}) {
         </div>
         <div className="comment__copy">
             <div className="comment__nameDate">
-                <h3 className="comment__name">{name}</h3>
-                <h3 className="comment__date">{dateString}</h3>
+                <h2 className="comment__name">{name}</h2>
+                <h2 className="comment__date">{dateString}</h2>
             </div>
             <p className="comment_text">{comment}</p>
         </div>
