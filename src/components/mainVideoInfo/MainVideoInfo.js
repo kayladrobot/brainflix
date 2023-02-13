@@ -4,7 +4,6 @@ import eyeIcon from "../../assets/icons/views.svg";
 import likeIcon from "../../assets/icons/likes.svg";
 
 function MainVideoInfo({ currentVideo }) {
-
   const date = new Date(currentVideo.timestamp);
   const month = ("0" + (date.getMonth() + 1)).slice(-2);
   const day = ("0" + date.getDate()).slice(-2);

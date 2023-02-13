@@ -1,11 +1,11 @@
-@use '../base/colors.scss' as *;
-@use '../abstracts/mixins.scss' as *;
-@use '../abstracts/variables.scss' as *;
+@use "../base/colors.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+@use "../abstracts/variables.scss" as *;
 
-*{
-    font-family: Avenir;
-    box-sizing: border-box;
-    margin: 0;
+* {
+  font-family: Avenir;
+  box-sizing: border-box;
+  margin: 0;
 }
 $light: 300;
 $normal: 400;
@@ -13,99 +13,109 @@ $semibold: 500;
 $bold: 600;
 $extra-bold: 700;
 
-
 @font-face {
-    font-family: 'Avenir';
-    src: url("../../../assets/font/AvenirNextLTPro-Regular.otf") format("otf");
-    // src: url("../../assets/font/AvenirNextLTPro-Demi.otf") format("otf");
-    src: url("../../../assets/font/AvenirNextLTPro-Bold.otf") format("otf");
+  font-family: "Avenir";
+  src: url("../../../assets/font/AvenirNextLTPro-Regular.otf") format("otf");
+  // src: url("../../assets/font/AvenirNextLTPro-Demi.otf") format("otf");
+  src: url("../../../assets/font/AvenirNextLTPro-Bold.otf") format("otf");
 }
 
 @mixin small-typography {
-    @media (min-width: $mobile-width){
-        @content;
-        
-        h1, h2, h3, h4, h5, h6, p{
-            margin: 0;
-        }
-        
-        h1{
-            font-size: 24px;
-            line-height: 32px; 
-            font-weight: $extra-bold;
-            margin: 0;
-        }
+  @media (min-width: $mobile-width) {
+    @content;
 
-        h2 {
-            font-size: 13px;
-            line-height: 18px; 
-            font-weight: $extra-bold;
-            margin: 0;
-        }
-        
-        h3 {
-            font-size: 13px;
-            line-height: 18px; 
-            font-weight: $semibold;
-            text-transform: uppercase;
-            margin: 0;
-        }
-        
-        p {
-            font-size: 13px;
-            line-height: 18px;
-            font-weight: $normal;
-            color: $black;
-            margin: 0;
-        }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+    }
 
-          h4 {
-            font-size: 10px;
-            line-height: 20px;
-            font-weight: $extra-bold;
-            text-transform: uppercase;
-          }
-    }   
+    h1 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: $extra-bold;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: $extra-bold;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: $semibold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: $normal;
+      color: $black;
+      margin: 0;
+    }
+
+    h4 {
+      font-size: 10px;
+      line-height: 20px;
+      font-weight: $extra-bold;
+      text-transform: uppercase;
+    }
+  }
 }
 
 @mixin large-typography {
-    @media (min-width: $tablet-width) {
-        @content;
-        
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0;
-        }
+  @media (min-width: $tablet-width) {
+    @content;
 
-        h1 {
-            font-size: 33px;
-            line-height: 44px;
-            font-weight: $extra-bold;
-        }
-
-        h2 {
-            font-size: 14px;
-            line-height: 22px; 
-            font-weight:  $extra-bold;
-        }
-
-        h3 {
-            font-size: 14px;
-            line-height: 22px; 
-            font-weight: $semibold;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 14px;
-            line-height: 22px;
-            font-weight: $semibold;
-        }
-
-       h4 {
-            font-size: 12px;
-            line-height: 20px;
-            font-weight: $extra-bold;
-            text-transform: uppercase;
-          }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
     }
+
+    h1 {
+      font-size: 33px;
+      line-height: 44px;
+      font-weight: $extra-bold;
+    }
+
+    h2 {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: $extra-bold;
+    }
+
+    h3 {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: $semibold;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: $semibold;
+    }
+
+    h4 {
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: $extra-bold;
+      text-transform: uppercase;
+    }
+  }
 }

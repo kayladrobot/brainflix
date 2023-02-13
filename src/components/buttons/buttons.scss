@@ -1,56 +1,54 @@
-@use '../../styles/partials/base/colors.scss' as *;
-@use'../../styles/partials/abstracts/variables.scss' as *;
-@use '../../styles/partials/abstracts/mixins.scss' as *;
-@use '../../styles/partials/base/typography.scss' as *;
+@use "../../styles/partials/base/colors.scss" as *;
+@use "../../styles/partials/abstracts/variables.scss" as *;
+@use "../../styles/partials/abstracts/mixins.scss" as *;
+@use "../../styles/partials/base/typography.scss" as *;
 
+.btn {
+  background-color: $blue;
+  color: $white;
+  border: none;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: $extra-bold;
+  min-width: 32px;
+  height: 40px;
+  transition: all 0.25s ease-in-out;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: $extra-bold;
 
-.btn{
-    background-color: $blue;
-    color: $white;
-    border: none;
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: $extra-bold;
-    min-width: 32px;
-    height: 40px;
-    transition: all .25s ease-in-out;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-    padding: 0;
+  @include tablet {
     font-size: 12px;
     line-height: 20px;
     font-weight: $extra-bold;
+  }
+
+  &:hover {
+    background-color: $darkblue;
+  }
+
+  &__header {
+    width: 100%;
+    position: relative;
+    grid-column: 1 / span 2;
 
     @include tablet {
-        font-size: 12px;
-        line-height: 20px;
-        font-weight: $extra-bold;
-          }
-
-    &:hover {
-        background-color: $darkblue;
+      grid-column: auto;
     }
+  }
 
-    &__header {
-        width: 100%;
-        position: relative;
-        grid-column: 1 / span 2;
-
-        @include tablet {
-            grid-column: auto;
-        }
-
-    }
-
-    &__uploadIcon {
-        position:absolute;
-        left: 0;
-        padding-left: .5rem;
-    }
-    }
+  &__uploadIcon {
+    position: absolute;
+    left: 0;
+    padding-left: 0.5rem;
+  }
+}

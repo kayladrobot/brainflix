@@ -24,7 +24,7 @@ const VideoSection = () => {
       <div className="video__section">
         <div>
           <MainVideoInfo currentVideo={currentVideo} videoData={videoDetails} />
-          <Comments currentVideo={currentVideo} key={currentVideo.id}/>
+          <Comments currentVideo={currentVideo} key={currentVideo.id} />
         </div>
         <VideoList
           key={currentVideo.id}

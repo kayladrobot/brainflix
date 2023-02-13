@@ -1,28 +1,29 @@
-import "./Video.scss"
+import "./Video.scss";
 
-function Video({title, channel, src, alt, id, changeVideo, changeActiveVideo}) {
+function Video({
+  title,
+  channel,
+  src,
+  alt,
+  id,
+  changeVideo,
+  changeActiveVideo,
+}) {
+  const clickHandler = () => {
+    changeActiveVideo(id);
+  };
 
-
-    const clickHandler = () => {
-        changeActiveVideo(id);
-      };
-
-      
   return (
-    <div className="video"  onClick={clickHandler}>
-        <div className="video__imageContainer">
-            <img 
-                className="video__image" 
-                src={src} 
-                alt={title}>
-            </img>
-        </div>
-        <div className="video__container">
-            <h2 className="video__header">{title}</h2>
-            <p>{channel}</p>
-        </div>
+    <div className="video" onClick={clickHandler}>
+      <div className="video__imageContainer">
+        <img className="video__image" src={src} alt={title}></img>
+      </div>
+      <div className="video__container">
+        <h2 className="video__header">{title}</h2>
+        <p>{channel}</p>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Video
+export default Video;

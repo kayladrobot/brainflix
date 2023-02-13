@@ -1,7 +1,7 @@
-import Video from '../video/Video';
-import './VideoList.scss';
+import Video from "../video/Video";
+import "./VideoList.scss";
 
-function VideoList({videoInfo, activeVideoId, changeActiveVideo}) {
+function VideoList({ videoInfo, activeVideoId, changeActiveVideo }) {
   return (
     <section className="video__list">
       <h3 className="video__mainHeader">Next Videos</h3>
