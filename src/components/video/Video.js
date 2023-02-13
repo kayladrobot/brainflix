@@ -1,12 +1,10 @@
 import "./Video.scss"
 
-function Video({title, channel, src, alt, id, key, changeVideo, changeActiveVideo}) {
+function Video({title, channel, src, alt, id, changeVideo, changeActiveVideo}) {
 
 
     const clickHandler = () => {
         changeActiveVideo(id);
-
-        console.log(id)
       };
 
       

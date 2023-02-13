@@ -1,18 +1,9 @@
 import "./MainVideo.scss";
 
-function MainVideo({currentVideo}) {
+function MainVideo({ currentVideo }) {
+  return (
+    <video poster={currentVideo.image} className="video__main" controls></video>
+  );
+}
 
-  console.log(currentVideo)
-
-    return (
-        <div>
-          <img 
-            alt="The current video"
-            src={currentVideo.image} 
-            className="video__main"
-            />
-      </div>
-    )
-  }
-  
-  export default MainVideo;
+export default MainVideo;

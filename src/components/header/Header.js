@@ -22,11 +22,13 @@ function Header() {
                         alt="search icon"
                     />
                 </form>
+                    <div className="header__imgContainer">
                         <img 
                             className="header__profileImg"
                             src={profileImg}
                             alt="user profile"
                         />
+                    </div>
                 <button className="btn btn__header">
                     <img 
                         className="btn__uploadIcon"

@@ -1,124 +1,110 @@
-@import '../../styles/partials/abstracts/mixins';
-@import '../../styles/partials/base/colors';
+@import "../../styles/partials/abstracts/mixins";
+@import "../../styles/partials/base/colors";
 
 .main {
-    @include tablet {
-        display: flex;
-        flex-direction: row;
-    }
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
-.video{
-    &__main {
-        width: 100%;
-        aspect-ratio: 2 / 1;
-        background-color: $mercury;
-        object-fit: cover;
+.video {
+
+  &__infoContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+    justify-content: space-between;
+    border-top: 1px solid $mercury;
+
+    @include tablet {
+      flex-direction: row;
+      border-top: 0;
+      padding-top: 0;
     }
 
-    &__list {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        row-gap: 1rem;
-        padding: 1rem;
+    @include desktop {
+      margin-right: 2rem;
+    }
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    row-gap: 0.5rem;
+
+    @include tablet {
+      flex-direction: row;
+      column-gap: 1rem;
     }
 
-    &__infoContainer {
-        display: flex;
-        flex-direction: column;
-        row-gap: 1rem;
-        margin-bottom: 1rem;
-        padding: 0 1rem;
+    @include desktop {
+      column-gap: 2rem;
+    }
+  }
 
-        @include tablet {
-            padding: 0 1.5rem;
-        }
+  &__engagement {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    margin-right: 3rem;
+
+    @include tablet {
+      flex-direction: row;
+      column-gap: 1rem;
+      margin-right: 0;
     }
 
-    &__info {
-        display: flex;
-        flex-direction: row;
-        padding-top: 1rem;
-        justify-content: space-between;
-        border-top: 1px solid $mercury;
-
-        @include tablet {
-            flex-direction: row;
-            border-top: 0;
-            padding-top: 0;
-        }
-
-        @include desktop {
-            margin-right: 2rem;
-        }
+    @include desktop {
+      column-gap: 2rem;
     }
+  }
 
-    &__author {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        row-gap: .5rem;
+  &__view {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    color: $silver;
+  }
 
-        @include tablet {
-            flex-direction: row;
-            column-gap: 1rem;
-        }
+  &__likes {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    color: $silver;
+  }
 
-        @include desktop {
-            column-gap: 2rem;
-        }
+  &__description {
+    border-top: 1px solid $mercury;
+    padding-top: 1rem;
+
+    @include desktop {
+      margin-right: 2rem;
     }
+  }
 
-    &__engagement {
-        display: flex;
-        flex-direction: column;
-        row-gap: .5rem;
-        margin-right: 3rem;
+  &__title {
+    padding-top: 1.5rem;
+  }
 
-        @include tablet {
-            flex-direction: row;
-            column-gap: 1rem;
-            margin-right: 0;
-        }
+  &__comments {
+    padding: 1rem;
+  }
 
-        @include desktop {
-            column-gap: 2rem;
-        }
-    }
-
-    &__view {
-        display: flex;
-        flex-direction: row;
-        column-gap: 1rem;
-        color: $silver;
-    }
-
-    &__likes {
-        display: flex;
-        flex-direction: row;
-        column-gap: 1rem;
-        color: $silver;
-    }
-
-    &__description {
-        border-top: 1px solid $mercury;
-        padding-top: 1rem;
-
-        @include desktop {
-            margin-right: 2rem;
-        }
-    }
-
-    &__title {
-        padding-top: 1.5rem;
-    }
-
-    &__comments {
-        padding: 1rem;
-    }
-
-    &__date {
-        color: $silver;
-    }
+  &__date {
+    color: $silver;
+  }
 }

@@ -5,7 +5,10 @@
 .comments{
     width: 100%;
     padding: 0 1rem;
-    padding-top: 2rem;
+
+    @include tablet {
+        padding: 1.5rem 0;
+    }
 
     &__form {
         display: flex;
@@ -18,6 +21,17 @@
         @include desktop {
             margin-right: 2rem;
         }
+    }
+
+    &__inputContainer {
+
+        @include tablet {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        column-gap: 1.5rem;
+        }
+
     }
 
     &__profileImg {
@@ -43,23 +57,46 @@
         width: 100%;
         border-radius: 4px;
         height: 100px;
-        vertical-align: text-top;
         background-color: $alabaster;
         color: $black;
         border: 1px solid $mercury;
         outline: none;
-        padding: .75rem;
+        padding: 1rem .75rem 100px .75rem;
         margin-bottom: 1rem;
-    }
-
-    &__input::placeholder {
+        line-height: 1.2;
+      
+        @include tablet {
+          height: 40px;
+          flex-grow: 2;
+          padding: 1rem .75rem 1rem .75rem;
+        }
+      }
+      
+      &__input::placeholder {
         color: $black;
         vertical-align: top;
       }
-    
-      &__input:focus {
-        border: 1px solid $darkBlack;
+      
+
+    &__input::-webkit-input-placeholder {
+        vertical-align: top;
       }
+      
+      &__input::-moz-placeholder {
+        vertical-align: top;
+      }
+      
+      &__input:-ms-input-placeholder {
+        vertical-align: top;
+      }
+      
+      &__input:-moz-placeholder {
+        vertical-align: top;
+      }
+    
+    &__input:focus {
+        border: 1px solid $darkBlack;
+    }
 
     &__formContainer {
         display: flex;
@@ -80,6 +117,11 @@
         position: relative;
         display: flex;
         justify-content: center;
+        width: 100%;
+        flex-grow: 1;
+
+        @include tablet {
+            width: 40%;
+        }
     }
-    
 }

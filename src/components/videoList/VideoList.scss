@@ -1,9 +1,27 @@
-@use '../../styles/partials/base/colors.scss' as *;
+@use "../../styles/partials/base/colors.scss" as *;
+@use "../../styles/partials/base/typography.scss" as *;
+@use "../../styles/partials/abstracts/mixins.scss" as *;
 
-.video__list {
+.video {
+  &__list {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-}
+    row-gap: 1rem;
+    padding: 1rem;
 
-.video__mainHeader {
+    @include tablet {
+      padding: 0;
+    }
+
+    @include desktop {
+      padding-left: 1.5rem;
+      border-left: 2px solid $mercury;
+    }
+  }
+
+  &__mainHeader {
     color: $silver;
+    font-weight: $bold;
+  }
 }

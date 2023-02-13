@@ -14,14 +14,16 @@ function Comments({currentVideo}) {
                 className="comments__profileImg"/>
             <form className="comments__form">
                 <label className="comments__header"><h2>Join the Conversation</h2></label>
-                <textarea className="comments__input"placeholder="Add a new comment" type="text" name="comment"></textarea>
-                <button className="btn comments__btn">
-                    <img
-                    src={CommentIcon}
-                    alt="comment icon"
-                    className="comments__icon"
-                    />
-                Comment</button>
+                <div className="comments__inputContainer">
+                    <input className="comments__input"placeholder="Add a new comment" type="text" name="comment"></input>
+                    <button className="btn comments__btn">
+                        <img
+                        src={CommentIcon}
+                        alt="comment icon"
+                        className="comments__icon"
+                        />
+                    Comment</button>
+                </div>
             </form>
         </div>
         {currentVideo.comments.map(comment => (
