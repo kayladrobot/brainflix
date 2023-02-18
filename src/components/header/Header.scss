@@ -92,17 +92,16 @@
       grid-column: auto;
     }
   }
-}
-
-form {
-  position: relative;
-  display: flex;
-  justify-content: center;
-
-  @include tablet {
-    grid-column: auto;
-  }
-  @include desktop {
-    grid-column: auto;
+  form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  
+    @include tablet {
+      grid-column: auto;
+    }
+    @include desktop {
+      grid-column: auto;
+    }
   }
 }

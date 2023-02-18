@@ -28,7 +28,7 @@ function Comments({ currentVideo }) {
               <img
                 src={CommentIcon}
                 alt="comment icon"
-                className="comments__icon"
+                className="comments__icon upload__icon"
               />
               Comment
             </button>

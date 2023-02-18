@@ -1,0 +1,20 @@
+@import "../../styles/partials/abstracts/mixins";
+@import "../../styles/partials/base/colors.scss";
+
+
+.upload {
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__cancel {
+        color: $blue;
+    }
+}

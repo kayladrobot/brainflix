@@ -10,7 +10,7 @@ function Header() {
     <header className="header">
       <div className="header__grid">
         <img className="header__logo" src={logo} alt="brainflix logo" />
-        <form>
+        <form className="header__form">
           <input type="text" className="header__input" placeholder="Search" />
           <img
             className="header__searchIcon"
