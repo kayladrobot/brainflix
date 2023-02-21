@@ -10,7 +10,11 @@
   padding: 1rem;
 
   @include tablet {
-    padding: 2rem;
+    padding: 1.5 2rem;
+  }
+
+  @include desktop {
+    padding: 1.5rem 7rem;
   }
 
   &__grid {
