@@ -10,8 +10,8 @@
 $light: 300;
 $normal: 400;
 $semibold: 500;
-$bold: 600;
-$extra-bold: 700;
+$bold: 700;
+$extra-bold: 900;
 
 @font-face {
   font-family: "Avenir";
@@ -51,7 +51,7 @@ $extra-bold: 700;
     h3 {
       font-size: 13px;
       line-height: 18px;
-      font-weight: $semibold;
+      font-weight: $bold;
       text-transform: uppercase;
       margin: 0;
     }
@@ -69,6 +69,20 @@ $extra-bold: 700;
       line-height: 20px;
       font-weight: $extra-bold;
       text-transform: uppercase;
+    }
+
+    label {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: $bold;
+      text-transform: uppercase;
+      margin: 0;
+      color: $silver;
+    }
+
+    input::placeholder {
+      vertical-align: top;
+      text-align: start;
     }
   }
 }
@@ -101,7 +115,7 @@ $extra-bold: 700;
     h3 {
       font-size: 14px;
       line-height: 22px;
-      font-weight: $semibold;
+      font-weight: $bold;
       text-transform: uppercase;
     }
 
@@ -117,5 +131,14 @@ $extra-bold: 700;
       font-weight: $extra-bold;
       text-transform: uppercase;
     }
+
+    label {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: $bold;
+      text-transform: uppercase;
+      color: $silver;
+    }
+    
   }
 }
