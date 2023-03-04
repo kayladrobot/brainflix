@@ -5,7 +5,8 @@ function Video({
   title,
   channel,
   src,
-  id
+  id,
+  changeActiveVideo
 }) {
 
   return (

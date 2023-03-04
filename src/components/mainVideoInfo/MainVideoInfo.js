@@ -3,7 +3,7 @@ import eyeIcon from "../../assets/icons/views.svg";
 import likeIcon from "../../assets/icons/likes.svg";
 import { Link } from "react-router-dom";
 
-function MainVideoInfo({ currentVideo, videoId }) {
+function MainVideoInfo({ currentVideo, currentVideoId}) {
 
   console.log(currentVideo)
   if (!currentVideo) {
@@ -19,7 +19,7 @@ function MainVideoInfo({ currentVideo, videoId }) {
     <div>
       <Link
         key={currentVideo.id}
-        to={`/videos/${currentVideo.id}`}
+        to={`/videos/${currentVideoId}`}
       >
       <div className="video__infoContainer">
         <h1 className="video__title">{currentVideo.title}</h1>

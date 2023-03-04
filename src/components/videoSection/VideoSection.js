@@ -41,23 +41,29 @@ const VideoSection = () => {
     }
   }, [currentVideoId]);
 
-  const handleVideoChange = (id) => {
-    const selectedVideo = videoData.find((video) => video.id === id);
-    setCurrentVideoId(selectedVideo.id);
+  const changeActiveVideo = (videoId) => {
+    setCurrentVideoId(videoId);
   };
+
+  const removeVideoFromList = (videoId) => {
+    setVideoData(videoData.filter((video) => video.id !== videoId));
+  };
+
 
   return (
     <div>
+      <MainVideo currentVideo={currentVideo} videoId={currentVideoId} />
       <div className="video__section">
-          <div>
-            <MainVideoInfo currentVideo={currentVideo} videoId={currentVideoId} />
-            {/* <Comments currentVideo={currentVideo} videoId={currentVideoId} /> */}
-          </div>
+        <div>
+          <MainVideoInfo currentVideo={currentVideo} videoId={currentVideoId} />
+          <Comments currentVideo={currentVideo} videoId={currentVideoId} />
+        </div>
         {videoData.length > 0 && (
           <VideoList
-            changeActiveVideo={handleVideoChange}
             videoData={videoData}
-            activeVideoId={currentVideo?.id}
+            activeVideoId={currentVideoId}
+            changeActiveVideo={changeActiveVideo}
+            removeVideoFromList={removeVideoFromList}
           />
         )}
       </div>

@@ -5,9 +5,13 @@ import CommentIcon from "../../assets/icons/add_comment.svg";
 
 function Comments({ currentVideo }) {
 
+  if (!currentVideo) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="comments">
-      <h2>{currentVideo.comments}Comments</h2>
+      <h2>{currentVideo.comments.length} Comments</h2>
       <div className="comments__formContainer">
         <img
           src={CommentImg}
@@ -50,19 +54,3 @@ function Comments({ currentVideo }) {
 }
 
 export default Comments;
-
-// <div className="comment">
-//             <div className="comments__commentImg">
-//                 <img
-//                 src=""
-//                 alt=""
-//                 className="comment__img"/>
-//             </div>
-//             <div className="comment__copy">
-//                 <div className="comment__nameDate">
-//                     <h4>{currentVideo.comments}</h4>
-//                     <h4>{currentVideo.comments}</h4>
-//                 </div>
-//             </div>
-//             <p className="comment__text">{currentVideo.comments}</p>
-//         </div>
