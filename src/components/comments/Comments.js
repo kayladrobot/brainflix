@@ -4,9 +4,10 @@ import CommentImg from "../../assets/images/Mohan-muruge.jpg";
 import CommentIcon from "../../assets/icons/add_comment.svg";
 
 function Comments({ currentVideo }) {
+
   return (
     <div className="comments">
-      <h2>{currentVideo.comments.length} Comments</h2>
+      <h2>{currentVideo.comments}Comments</h2>
       <div className="comments__formContainer">
         <img
           src={CommentImg}
@@ -35,7 +36,8 @@ function Comments({ currentVideo }) {
           </div>
         </form>
       </div>
-      {currentVideo.comments.map((comment) => (
+      {currentVideo.comments &&
+      currentVideo.comments.map((comment) => (
         <Comment
           key={comment.id}
           comment={comment.comment}

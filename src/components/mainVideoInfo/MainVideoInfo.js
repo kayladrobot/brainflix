@@ -1,9 +1,14 @@
-import "./MainVideoInfo";
 import "./MainVideoInfo.scss";
 import eyeIcon from "../../assets/icons/views.svg";
 import likeIcon from "../../assets/icons/likes.svg";
+import { Link } from "react-router-dom";
 
-function MainVideoInfo({ currentVideo }) {
+function MainVideoInfo({ currentVideo, videoId }) {
+
+  console.log(currentVideo)
+  if (!currentVideo) {
+    return <div>Loading...</div>;
+  }
   const date = new Date(currentVideo.timestamp);
   const month = ("0" + (date.getMonth() + 1)).slice(-2);
   const day = ("0" + date.getDate()).slice(-2);
@@ -12,6 +17,10 @@ function MainVideoInfo({ currentVideo }) {
 
   return (
     <div>
+      <Link
+        key={currentVideo.id}
+        to={`/videos/${currentVideo.id}`}
+      >
       <div className="video__infoContainer">
         <h1 className="video__title">{currentVideo.title}</h1>
         <div className="video__info">
@@ -21,7 +30,11 @@ function MainVideoInfo({ currentVideo }) {
           </div>
           <div className="video__engagement">
             <div className="video__view">
-              <img className="video__viewIcon" src={eyeIcon} alt="eye icon" />
+              <img
+                className="video__viewIcon"
+                src={eyeIcon}
+                alt="eye icon"
+              />
               <h3>{currentVideo.views}</h3>
             </div>
             <div className="video__likes">
@@ -36,7 +49,9 @@ function MainVideoInfo({ currentVideo }) {
         </div>
         <p className="video__description">{currentVideo.description}</p>
       </div>
+      </Link>
     </div>
+    
   );
 }
 

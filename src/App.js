@@ -1,30 +1,24 @@
-import './App.scss';
+import "./App.scss";
 import Header from "./components/header/Header";
-import VideoSection from './components/videoSection/VideoSection'
-import VideoUpload from './pages/page/VideoUpload.js'
-import UploadSection from './components/uploadSection/UploadSection'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import VideoSection from "./components/videoSection/VideoSection";
+import UploadSection from "./components/uploadSection/UploadSection";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
+
   return (
     <BrowserRouter>
       <Header />
-      <VideoSection />
-      <UploadSection />
-        <Routes>
-          <Route exact path="/" component={VideoSection} />
-          <Route path="/upload" component={VideoUpload} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<VideoSection />} />
+        <Route
+          path="/videos/:videoId"
+          element={<VideoSection />}
+        />
+        <Route path="/upload" element={<UploadSection />} />
+      </Routes>
     </BrowserRouter>
   );
 }
-// function App() {
-//   return (
-//     <div className="App">
-//       <Header />
-//       <VideoSection />
-//     </div>
-//   );
-// }
 
 export default App;

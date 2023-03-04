@@ -84,6 +84,11 @@ $extra-bold: 900;
       vertical-align: top;
       text-align: start;
     }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
 }
 

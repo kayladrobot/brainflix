@@ -1,8 +1,19 @@
 import "./MainVideo.scss";
 
-function MainVideo({ currentVideo }) {
+
+function MainVideo({ currentVideo, videoId}) {
+
+  const video = currentVideo.find(video => video.id === videoId);
+
+
+  if (!video) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <video poster={currentVideo.image} className="video__main" controls></video>
+    <div>
+      <img src={currentVideo.image} alt="test" className="video__main"></img>
+    </div>
   );
 }
 
