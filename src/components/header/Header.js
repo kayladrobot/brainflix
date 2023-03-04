@@ -10,8 +10,8 @@ function Header() {
   return (
     <header className="header">
       <div className="header__grid">
-        <Link to="/">
-          <img className="header__logo" src={logo} alt="brainflix logo" />
+        <Link to="/" className="header__logo">
+          <img src={logo} alt="brainflix logo" />
         </Link>
         <form className="header__form">
           <input type="text" className="header__input" placeholder="Search" />
@@ -28,7 +28,7 @@ function Header() {
             alt="user profile"
           />
         </div>
-        <Link to="/upload">
+        <Link to="/upload" className="btn__headerContainer">
           <button className="btn btn__header">
             <img className="btn__uploadIcon" src={uploadIcon} alt="upload icon" />
             Upload

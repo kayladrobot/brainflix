@@ -3,30 +3,24 @@ import eyeIcon from "../../assets/icons/views.svg";
 import likeIcon from "../../assets/icons/likes.svg";
 import { Link } from "react-router-dom";
 
-function MainVideoInfo({ currentVideo, currentVideoId}) {
+function MainVideoInfo({ currentVideo, displayDate}) {
 
-  console.log(currentVideo)
   if (!currentVideo) {
     return <div>Loading...</div>;
   }
-  const date = new Date(currentVideo.timestamp);
-  const month = ("0" + (date.getMonth() + 1)).slice(-2);
-  const day = ("0" + date.getDate()).slice(-2);
-  const year = date.getFullYear();
-  const dateString = `${month}/${day}/${year}`;
 
   return (
     <div>
       <Link
         key={currentVideo.id}
-        to={`/videos/${currentVideoId}`}
+        to={`/videos/${currentVideo.id}`}
       >
       <div className="video__infoContainer">
         <h1 className="video__title">{currentVideo.title}</h1>
         <div className="video__info">
           <div className="video__author">
             <h2>By {currentVideo.channel}</h2>
-            <h3 className="video__date">{dateString}</h3>
+            <h3 className="video__date">{displayDate(currentVideo.timestamp)}</h3>
           </div>
           <div className="video__engagement">
             <div className="video__view">

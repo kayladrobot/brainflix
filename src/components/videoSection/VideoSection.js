@@ -9,63 +9,39 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const VideoSection = () => {
-  const [videoData, setVideoData] = useState([]);
+  const displayDate = (timestamp) => {
+    const date = new Date(timestamp);
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const day = ("0" + date.getDate()).slice(-2);
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+  }
+
   const [currentVideo, setCurrentVideo] = useState(null);
-  const [currentVideoId, setCurrentVideoId] = useState(null);
   const { videoId } = useParams();
 
   useEffect(() => {
-    const fetchVideoData = async () => {
-      try {
-        const response = await axios.get(`${BASE_URL}videos?api_key=${API_KEY}`);
-        setVideoData(response.data);
-        setCurrentVideoId(response.data[0].id);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    const fetchCurrentVideo = async () => {
-      try {
-        const response = await axios.get(`${BASE_URL}videos/${currentVideoId}?api_key=${API_KEY}`);
-        setCurrentVideo(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    if (!currentVideoId) {
-      fetchVideoData();
-    } else {
-      fetchCurrentVideo();
-    }
-  }, [currentVideoId]);
-
-  const changeActiveVideo = (videoId) => {
-    setCurrentVideoId(videoId);
-  };
-
-  const removeVideoFromList = (videoId) => {
-    setVideoData(videoData.filter((video) => video.id !== videoId));
-  };
-
+    axios
+        .get(`${BASE_URL}videos/${videoId}?api_key=${API_KEY}`)
+        .then((response) => {
+          setCurrentVideo(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+  }, [videoId]);
 
   return (
     <div>
-      <MainVideo currentVideo={currentVideo} videoId={currentVideoId} />
+      <MainVideo currentVideo={currentVideo} videoId={videoId} />
       <div className="video__section">
         <div>
-          <MainVideoInfo currentVideo={currentVideo} videoId={currentVideoId} />
-          <Comments currentVideo={currentVideo} videoId={currentVideoId} />
+          <MainVideoInfo currentVideo={currentVideo} videoId={videoId} displayDate={displayDate}/>
+          <Comments currentVideo={currentVideo} videoId={videoId} displayDate={displayDate}/>
         </div>
-        {videoData.length > 0 && (
           <VideoList
-            videoData={videoData}
-            activeVideoId={currentVideoId}
-            changeActiveVideo={changeActiveVideo}
-            removeVideoFromList={removeVideoFromList}
+            activeVideoId={videoId}
           />
-        )}
       </div>
     </div>
   );

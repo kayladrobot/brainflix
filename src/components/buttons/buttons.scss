@@ -33,13 +33,20 @@
   }
 
   &:hover {
-    background-color: $darkblue;
+    background-color: $darkblue; 
+  }
+
+  &__headerContainer {
+    grid-column: span 2 / 3;
+
+    @include tablet {
+      grid-column: auto;
+    }
   }
 
   &__header {
     width: 100%;
     position: relative;
-    grid-column: 1 / span 2;
 
     @include tablet {
       grid-column: auto;
