@@ -1,23 +1,12 @@
 import "./Comment.scss";
-import { API_KEY, BASE_URL } from "../../init";
-import axios from "axios";
+import deleteIcon from "../../assets/icons/icon-delete.svg"
 
-function comment({ timestamp, name, comment, displayDate}) {
 
-  const deleteComment = (e => {
-    const commentId = e.target.id;
-    // send a delete request using axios to remove the commentEl
-    axios
-      .delete(
-        `${BASE_URL}/comments/${commentId}?api_key=${API_KEY}`
-      )
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+function Comment({ timestamp, name, commentName, displayDate, handleDeleteComment, commentId}) {
+    
+  const handleDeleteClick = () => {
+    handleDeleteComment(commentId);
+  };
 
   return (
     <div className="comment">
@@ -27,10 +16,20 @@ function comment({ timestamp, name, comment, displayDate}) {
           <h2 className="comment__name">{name}</h2>
           <h3 className="comment__date">{displayDate(timestamp)}</h3>
         </div>
-        <p className="comment_text">{comment}</p>
+        <p className="comment_text">{commentName}</p>
+        <div className="comment__icons">
+           <img 
+          src={deleteIcon}
+          alt="delete icon"
+          className="comment__deleteIcon"
+          onClick={handleDeleteClick}
+          />
+        </div>
       </div>
     </div>
   );
 }
 
-export default comment;
+  
+  export default Comment;
+  

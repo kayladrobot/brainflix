@@ -1,19 +1,13 @@
 import "./MainVideo.scss";
 
-function MainVideo({ currentVideo}) {
-
+function MainVideo({ currentVideo }) {
   const video = currentVideo ? currentVideo : null;
-  console.log(video)
-  
+
   return (
     <div>
       {video && (
-            <img 
-              src={currentVideo.image} 
-              alt="Default" 
-              className="video__main" 
-            />
-          )}
+        <img src={currentVideo.image} alt="Default" className="video__main" />
+      )}
     </div>
   );
 }

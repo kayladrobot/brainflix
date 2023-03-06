@@ -48,4 +48,10 @@
   &__date {
     color: $silver;
   }
+
+  &__icons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: .5rem;
+  }
 }
