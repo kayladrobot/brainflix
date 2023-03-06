@@ -1,20 +1,15 @@
 import "./Video.scss";
+import { Link } from "react-router-dom";
 
 function Video({
   title,
   channel,
   src,
-  alt,
-  id,
-  changeVideo,
-  changeActiveVideo,
+  id
 }) {
-  const clickHandler = () => {
-    changeActiveVideo(id);
-  };
 
   return (
-    <div className="video" onClick={clickHandler}>
+    <Link to={`/videos/${id}`} className="video">
       <div className="video__imageContainer">
         <img className="video__image" src={src} alt={title}></img>
       </div>
@@ -22,7 +17,7 @@ function Video({
         <h2 className="video__header">{title}</h2>
         <p>{channel}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

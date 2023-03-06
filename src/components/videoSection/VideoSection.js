@@ -1,37 +1,55 @@
-import "./VideoSection.scss";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { API_KEY, BASE_URL } from "../../init";
+import { useParams } from "react-router-dom";
 import VideoList from "../videoList/VideoList";
 import MainVideo from "../mainVideo/MainVideo";
 import MainVideoInfo from "../mainVideoInfo/MainVideoInfo";
-import videoDetails from "../../data/video-details.json";
-import videos from "../../data/videos.json";
 import Comments from "../comments/Comments";
-import React, { useState } from "react";
+import "./VideoSection.scss";
+
 
 const VideoSection = () => {
-  const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
+  const [currentVideo, setCurrentVideo] = useState(null);
+  const { videoId } = useParams();
 
-  const changeVideo = (id) => {
-    const selectedVideo = videoDetails.find((video) => {
-      return video.id === id;
-    });
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}videos/${videoId}?api_key=${API_KEY}`)
+      .then((response) => {
+        setCurrentVideo(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [videoId]);
 
-    setCurrentVideo(selectedVideo);
+  const displayDate = (timestamp) => {
+    const date = new Date(timestamp);
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const day = ("0" + date.getDate()).slice(-2);
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
   };
 
   return (
     <div>
-      <MainVideo currentVideo={currentVideo} />
+      <MainVideo currentVideo={currentVideo} videoId={videoId} />
       <div className="video__section">
         <div>
-          <MainVideoInfo currentVideo={currentVideo} videoData={videoDetails} />
-          <Comments currentVideo={currentVideo} key={currentVideo.id} />
+          <MainVideoInfo
+            currentVideo={currentVideo}
+            videoId={videoId}
+            displayDate={displayDate}
+          />
+          <Comments
+            currentVideo={currentVideo}
+            videoId={videoId}
+            displayDate={displayDate}
+            setCurrentVideo={setCurrentVideo}
+          />
         </div>
-        <VideoList
-          key={currentVideo.id}
-          changeActiveVideo={changeVideo}
-          videoInfo={videos}
-          activeVideoId={currentVideo.id}
-        />
+        <VideoList activeVideoId={videoId} />
       </div>
     </div>
   );

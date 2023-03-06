@@ -1,8 +1,14 @@
 import "./MainVideo.scss";
 
 function MainVideo({ currentVideo }) {
+  const video = currentVideo ? currentVideo : null;
+
   return (
-    <video poster={currentVideo.image} className="video__main" controls></video>
+    <div>
+      {video && (
+        <img src={currentVideo.image} alt="Default" className="video__main" />
+      )}
+    </div>
   );
 }
 

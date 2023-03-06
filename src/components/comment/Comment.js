@@ -1,11 +1,12 @@
 import "./Comment.scss";
+import deleteIcon from "../../assets/icons/icon-delete.svg"
 
-function comment({ timestamp, name, comment }) {
-  const date = new Date(timestamp);
-  const month = ("0" + (date.getMonth() + 1)).slice(-2);
-  const day = ("0" + date.getDate()).slice(-2);
-  const year = date.getFullYear();
-  const dateString = `${month}/${day}/${year}`;
+
+function Comment({ timestamp, name, commentName, displayDate, handleDeleteComment, commentId}) {
+    
+  const handleDeleteClick = () => {
+    handleDeleteComment(commentId);
+  };
 
   return (
     <div className="comment">
@@ -13,12 +14,22 @@ function comment({ timestamp, name, comment }) {
       <div className="comment__copy">
         <div className="comment__nameDate">
           <h2 className="comment__name">{name}</h2>
-          <h3 className="comment__date">{dateString}</h3>
+          <h3 className="comment__date">{displayDate(timestamp)}</h3>
         </div>
-        <p className="comment_text">{comment}</p>
+        <p className="comment_text">{commentName}</p>
+        <div className="comment__icons">
+           <img 
+          src={deleteIcon}
+          alt="delete icon"
+          className="comment__deleteIcon"
+          onClick={handleDeleteClick}
+          />
+        </div>
       </div>
     </div>
   );
 }
 
-export default comment;
+  
+  export default Comment;
+  

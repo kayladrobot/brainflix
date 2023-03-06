@@ -1,15 +1,17 @@
 @use "../../styles/partials/abstracts/mixins.scss" as *;
-.video {
+.video { 
   &__section {
+         
+    @include tablet {
+      padding: 0 2.25rem;
+    }
+    
     @include desktop {
       display: grid;
       row-gap: 1rem;
       width: 100%;
       grid-template-columns: auto 35%;
-    }
-
-    @include tablet {
-      padding: 0 2.25rem;
+      padding: 0 7rem;
     }
   }
 }
