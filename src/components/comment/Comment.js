@@ -4,10 +4,6 @@ import deleteIcon from "../../assets/icons/icon-delete.svg"
 
 function Comment({ timestamp, name, commentName, displayDate, handleDeleteComment, commentId}) {
     
-  const handleDeleteClick = () => {
-    handleDeleteComment(commentId);
-  };
-
   return (
     <div className="comment">
       <div className="comment__imgContainer"></div>
@@ -22,7 +18,7 @@ function Comment({ timestamp, name, commentName, displayDate, handleDeleteCommen
           src={deleteIcon}
           alt="delete icon"
           className="comment__deleteIcon"
-          onClick={handleDeleteClick}
+          onClick={() => handleDeleteComment(commentId, name)}
           />
         </div>
       </div>

@@ -16,7 +16,7 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
     e.preventDefault();
     const newComment = {
       comment: comment,
-      name: comment,
+      name: "Guest"
     };
     axios
       .post(
@@ -40,22 +40,24 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
       .catch((error) => console.log(error));
   };
 
-  const handleDeleteComment = (commentId) => {
-    axios
-      .delete(
-        `${BASE_URL}videos/${videoId}/comments/${commentId}?api_key=${API_KEY}`
-      )
-      .then((response) => {
-        setCurrentVideo({
-          ...currentVideo,
-          comments: currentVideo.comments.filter(
-            (comment) => comment.id !== commentId
-          ),
+  const handleDeleteComment = (commentId, name) => {
+    if(name === "Guest") {
+      axios
+        .delete(
+          `${BASE_URL}videos/${videoId}/comments/${commentId}?api_key=${API_KEY}`
+        )
+        .then((response) => {
+          setCurrentVideo({
+            ...currentVideo,
+            comments: currentVideo.comments.filter(
+              (comment) => comment.id !== commentId
+            ),
+          });
+        })
+        .catch((error) => {
+          console.log(error);
         });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    }
   };
 
   const handleCommentChange = (e) => {
