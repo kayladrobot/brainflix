@@ -9,7 +9,7 @@ import Comments from "../comments/Comments";
 import "./VideoSection.scss";
 
 
-const VideoSection = () => {
+const VideoSection = ({videoData}) => {
   const [currentVideo, setCurrentVideo] = useState(null);
   const { videoId } = useParams();
 
@@ -49,7 +49,7 @@ const VideoSection = () => {
             setCurrentVideo={setCurrentVideo}
           />
         </div>
-        <VideoList activeVideoId={videoId} />
+        <VideoList activeVideoId={videoId} videoData={videoData} />
       </div>
     </div>
   );

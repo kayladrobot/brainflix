@@ -1,23 +1,8 @@
 import Video from "../video/Video";
 import "./VideoList.scss";
 import { NavLink } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import { API_KEY, BASE_URL } from "../../init";
-import axios from "axios";
 
-function VideoList({activeVideoId}) {
-  const [videoData, setVideoData] = useState([]);
-
-  useEffect(() => {
-      axios
-        .get(`${BASE_URL}videos?api_key=${API_KEY}`)
-        .then((response) => {
-          setVideoData(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-  }, []);
+function VideoList({activeVideoId, videoData}) {
 
   return (
     <section className="video__list">
