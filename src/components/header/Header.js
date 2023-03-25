@@ -10,7 +10,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__grid">
-        <Link to="/" className="header__logo">
+        <Link to="/videos/84e96018-4022-434e-80bf-000ce4cd12b8" className="header__logo">
           <img src={logo} alt="brainflix logo" />
         </Link>
         <form className="header__form">

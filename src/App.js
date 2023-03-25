@@ -21,6 +21,26 @@ function App() {
       });
 }, []);
 
+const handleUpload = (e) => {
+  e.preventDefault();
+
+  const formData = {
+    title: e.target.title.value,
+    description: e.target.description.value
+  }
+
+  axios.post(`${BASE_URL}videos?api_key=${API_KEY}`, formData)
+  .then((response) => {
+    console.log(response);
+    const updatedVideoData = [...videoData, response.data];
+    setVideoData(updatedVideoData);
+    console.log(videoData)
+    e.target.reset();
+  })
+  .catch((error) => console.log(error));
+
+};
+
 
   return (
     <BrowserRouter>
@@ -34,7 +54,7 @@ function App() {
           }
         />
         <Route path="/videos/:videoId" element={<VideoSection videoData={videoData}/>} />
-        <Route path="/upload" element={<UploadSection videoData={videoData} setVideoData={setVideoData}/>} />
+        <Route path="/upload" element={<UploadSection handleUpload={handleUpload}/>} />
       </Routes>
     </BrowserRouter>
   );

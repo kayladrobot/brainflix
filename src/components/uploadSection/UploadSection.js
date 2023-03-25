@@ -1,33 +1,8 @@
-// import React, { useState } from "react";
 import testImg from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
 import "./UploadSection.scss";
-import { API_KEY, BASE_URL } from "../../init";
-import axios from "axios";
 
-function UploadSection({videoData, setVideoData}) {
-
-  const handleUpload = (e) => {
-    e.preventDefault();
-
-    const formData = {
-      title: e.target.title.value,
-      description: e.target.description.value
-    }
-
-    axios.post(`${BASE_URL}videos?api_key=${API_KEY}`, formData)
-    .then((response) => {
-      console.log(response);
-      const updatedVideoData = {
-        ...videoData,
-        ...response.data
-      };
-      setVideoData(updatedVideoData);
-      e.target.reset();
-    })
-    .catch((error) => console.log(error));
-
-  };
+function UploadSection({handleUpload}) {
   
   return (
     <div className="upload">

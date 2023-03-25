@@ -3,11 +3,11 @@ import "./VideoList.scss";
 import { NavLink } from "react-router-dom";
 
 function VideoList({activeVideoId, videoData}) {
-
+console.log(videoData)
   return (
     <section className="video__list">
       <h3 className="video__mainHeader">Next Videos</h3>
-      {videoData
+      {Array.isArray(videoData) && videoData
         .filter((video) => video.id !== activeVideoId)
         .map((video, index) => (
           <NavLink
