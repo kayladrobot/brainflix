@@ -19,11 +19,11 @@ function UploadSection({videoData, setVideoData}) {
     axios.defaults.headers.post['Content-Type'] = 'application/json';
     axios.post(`${PORT}videos`, jsonData)
     .then((response) => {
-      console.log(response);
       const updatedVideoData = [...videoData, response.data];
       setVideoData(updatedVideoData);
-      console.log(videoData)
       e.target.reset();
+      window.alert("Successful upload!")
+      window.location.replace("/");
     })
     .catch((error) => console.log(error));
   };
