@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { API_KEY, BASE_URL } from "../../init";
+import { PORT } from "../../const";
 import axios from "axios";
 import Comment from "../comment/Comment";
 import CommentImg from "../../assets/images/Mohan-muruge.jpg";
@@ -10,8 +10,6 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
   const formEl = useRef(null);
   const [comment, setComment] = useState("");
 
-  console.log(currentVideo);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const newComment = {
@@ -20,7 +18,7 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
     };
     axios
       .post(
-        `${BASE_URL}videos/${videoId}/comments?api_key=${API_KEY}`,
+        `${PORT}videos/${videoId}/comments`,
         newComment,
         {
           headers: {
@@ -44,7 +42,7 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
     if(name === "Guest") {
       axios
         .delete(
-          `${BASE_URL}videos/${videoId}/comments/${commentId}?api_key=${API_KEY}`
+          `${PORT}videos/${videoId}/comments/${commentId}`
         )
         .then((response) => {
           setCurrentVideo({

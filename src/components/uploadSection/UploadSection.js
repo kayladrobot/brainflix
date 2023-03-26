@@ -1,9 +1,34 @@
+import axios from "axios";
+import { PORT} from "../../const";
 import testImg from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
 import "./UploadSection.scss";
 
-function UploadSection({handleUpload}) {
+function UploadSection({videoData, setVideoData}) {
+
+  const handleUpload = (e) => {
+    e.preventDefault();
   
+    const formData = {
+      title: e.target.title.value,
+      channel: e.target.description.value
+    }
+  
+    const jsonData = JSON.stringify(formData);
+  
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
+    axios.post(`${PORT}videos`, jsonData)
+    .then((response) => {
+      console.log(response);
+      const updatedVideoData = [...videoData, response.data];
+      setVideoData(updatedVideoData);
+      console.log(videoData)
+      e.target.reset();
+    })
+    .catch((error) => console.log(error));
+  };
+
+
   return (
     <div className="upload">
       <h1 className="upload__header">Upload Video</h1>

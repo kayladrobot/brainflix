@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { API_KEY, BASE_URL } from "../../init";
+import { PORT} from "../../const";
 import { useParams } from "react-router-dom";
 import VideoList from "../videoList/VideoList";
 import MainVideo from "../mainVideo/MainVideo";
@@ -15,7 +15,7 @@ const VideoSection = ({videoData}) => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}videos/${videoId}?api_key=${API_KEY}`)
+      .get(`${PORT}videos/${videoId}`)
       .then((response) => {
         setCurrentVideo(response.data);
       })

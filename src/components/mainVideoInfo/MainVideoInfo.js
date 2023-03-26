@@ -8,6 +8,7 @@ function MainVideoInfo({ currentVideo, displayDate}) {
   if (!currentVideo) {
     return <div>Loading...</div>;
   }
+  console.log(currentVideo);
 
   return (
     <div>
