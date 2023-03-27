@@ -1,6 +1,6 @@
 import axios from "axios";
 import { PORT} from "../../const";
-import testImg from "../../assets/images/Mohan-muruge.jpg";
+import defaultImage from "../../assets/images/Upload-video-preview.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
 import "./UploadSection.scss";
 
@@ -35,7 +35,7 @@ function UploadSection({videoData, setVideoData}) {
       <div className="upload__main">
         <div className="upload__imgContainer">
           <label>Video thumbnail</label>
-          <img src={testImg} alt="mohan murage" className="upload__img" />
+          <img src={defaultImage} alt="mohan murage" className="upload__img" />
         </div>
         <form onSubmit={handleUpload} className="upload__form">
           <div className="upload__input">
