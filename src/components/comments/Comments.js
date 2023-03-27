@@ -16,10 +16,13 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
       comment: comment,
       name: "Guest"
     };
+
+    const jsonData = JSON.stringify(newComment);
+
     axios
       .post(
         `${PORT}videos/${videoId}/comments`,
-        newComment,
+        jsonData,
         {
           headers: {
             "Content-Type": "application/json",
@@ -36,26 +39,6 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
         formEl.current.reset();
       })
       .catch((error) => console.log(error));
-  };
-
-  const handleDeleteComment = (commentId, name) => {
-    if(name === "Guest") {
-      axios
-        .delete(
-          `${PORT}videos/${videoId}/comments/${commentId}`
-        )
-        .then((response) => {
-          setCurrentVideo({
-            ...currentVideo,
-            comments: currentVideo.comments.filter(
-              (comment) => comment.id !== commentId
-            ),
-          });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
   };
 
   const handleCommentChange = (e) => {
@@ -110,7 +93,6 @@ function Comments({ currentVideo, videoId, displayDate, setCurrentVideo }) {
             name={comment.name}
             timestamp={comment.timestamp}
             displayDate={displayDate}
-            handleDeleteComment={handleDeleteComment}
             videoId={videoId}
             currentVideo={currentVideo}
             commentId={comment.id}

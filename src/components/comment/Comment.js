@@ -1,5 +1,4 @@
 import "./Comment.scss";
-import deleteIcon from "../../assets/icons/icon-delete.svg"
 
 
 function Comment({ timestamp, name, commentName, displayDate, handleDeleteComment, commentId}) {
@@ -14,12 +13,6 @@ function Comment({ timestamp, name, commentName, displayDate, handleDeleteCommen
         </div>
         <p className="comment_text">{commentName}</p>
         <div className="comment__icons">
-           <img 
-          src={deleteIcon}
-          alt="delete icon"
-          className="comment__deleteIcon"
-          onClick={() => handleDeleteComment(commentId, name)}
-          />
         </div>
       </div>
     </div>

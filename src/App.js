@@ -26,7 +26,6 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* Paulo instructed this was a viable way to do this*/}
         <Route
           path="/"
           element={
